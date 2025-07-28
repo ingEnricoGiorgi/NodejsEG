@@ -104,5 +104,9 @@
                 "name": "Zane",
                 "password": "Zane123"
                 }
+            ,{"id": 27,
+                "name": "admin",
+                "password": "admin"
+                }
             ]
 }
