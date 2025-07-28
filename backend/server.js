@@ -26,7 +26,7 @@ app.post('/api/login', (req, res) => {
         return res.status(401).send('Credenziali errate');
     }
 
-    const token = jwt.sign({ username: user.name, id: user.id }, SECRET, { expiresIn: '5m' });
+    const token = jwt.sign({ username: user.name, id: user.id }, SECRET, { expiresIn: '1m' });
     res.cookie('token', token, { httpOnly: true });
     res.redirect('/profilo.html');
 });
