@@ -39,3 +39,6 @@ docker build -t nome-immagine .
 docker run -d -p 3000:3000 --name nuovo-container nome-immagine
 
 docker-compose logs backend
+
+openssl req -x509 -newkey rsa:2048 -sha256 -nodes -days 365 \
+  -keyout localhost.key -out localhost.crt

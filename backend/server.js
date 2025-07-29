@@ -1,3 +1,4 @@
+const https = require('https');
 require('dotenv').config();
 const crypto = require('crypto');
 const express = require('express');
@@ -8,6 +9,11 @@ const cookieParser = require('cookie-parser');
 const path = require('path');
 
 const app = express();
+const httpsOptions = {
+  key: fs.readFileSync(path.join(__dirname, 'certs', 'localhost.key')),
+  cert: fs.readFileSync(path.join(__dirname, 'certs', 'localhost.crt'))
+};
+
 const PORT = 3000;
 const SECRET = process.env.JWT_SECRET;
 
@@ -96,9 +102,10 @@ app.get('/test', verificaToken, (req, res) => {
 });
 
 // Avvio server
-app.listen(PORT, () => {
-  console.log(`Server avviato su http://localhost:${PORT}`);
+https.createServer(httpsOptions, app).listen(PORT, () => {
+  console.log(`Server HTTPS attivo su https://localhost:${PORT}`);
 });
+
 
 function encrypt(text) {
   const iv = crypto.randomBytes(16);
