@@ -50,9 +50,9 @@ app.post('/api/login', (req, res) => {
   }
 
 const userData = JSON.stringify({ username: user.name, id: user.id });
-const encryptedData = encrypt(userData);
+const encryptedData = encrypt(userData);  //CIFRATURA TOKEN
 
-const token = jwt.sign({ data: encryptedData }, SECRET, { expiresIn: '1m' });
+const token = jwt.sign({ data: encryptedData }, SECRET, { expiresIn: '1m' }); //FIRMA TOKEN
 
 
   // Cookie httpOnly
