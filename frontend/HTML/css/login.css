@@ -1,49 +1,54 @@
+html, body {
+  height: 60%;
+  margin: 0;
+  font-family: sans-serif;
+  background-color: #f5f5f5;
+}
 
-    html, body {
-      height: 60%;
-      margin: 0;
-      font-family: sans-serif;
-      background-color: #f5f5f5;
-    }
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
 
-    .container {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%; /* ← da 300px a 100% per allineare tutto nel container */
+}
 
-    #loginForm {
-      background: white;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      width: 300px;
-    }
+#loginForm input {
+  padding: 10px;
+  font-size: 1rem;
+}
 
-    #loginForm input {
-      padding: 10px;
-      font-size: 1rem;
-    }
+#loginForm button {
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
 
-    #loginForm button {
-      padding: 10px;
-      font-size: 1rem;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
+#loginForm button:hover {
+  background-color: #0056b3;
+}
 
-    #loginForm button:hover {
-      background-color: #0056b3;
-    }
+#error {
+  color: red;
+  text-align: center;
+}
 
-    #error {
-      color: red;
-      text-align: center;
-    }
+.raptor {
+  width: 200px;
+  margin: 20px auto 0; /* centrata e con margine sopra */
+  display: block;
+  border-radius: 12px;
+}

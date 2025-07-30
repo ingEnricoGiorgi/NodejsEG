@@ -3,10 +3,14 @@ services:
     build: ./frontend
     ports:
       - "8080:80"
+      - "443:443"
+    volumes:
+      - ./frontend/html:/usr/share/nginx/html
+      - ./backend/certs:/etc/nginx/ssl    # QUESTO È GIUSTO
     depends_on:
       - backend
 
   backend:
     build: ./backend
     ports:
-      - "3000:3000"
+      - "63000:63000"

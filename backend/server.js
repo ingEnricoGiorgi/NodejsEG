@@ -14,7 +14,7 @@ const httpsOptions = {
   cert: fs.readFileSync(path.join(__dirname, 'certs', 'localhost.crt'))
 };
 
-const PORT = 3000;
+const PORT = 63000;
 const SECRET = process.env.JWT_SECRET;
 
 
@@ -96,7 +96,6 @@ app.get('/test', verificaToken, (req, res) => {
     <h1>Test HTTPS</h1>
     <p>Protocollo usato: ${isSecure ? 'HTTPS ✅' : 'HTTP ❌'}</p>
     <p>Utente: ${req.user.username}</p>
-    <p>IP: ${clientIp}</p>
     <a href="/profilo.html">⬅ Torna al profilo</a>
   `);
 });
